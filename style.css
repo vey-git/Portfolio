@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+  --bg-color: #222831;
+  --text-color: #ffffff;
+  --accent-color: #d5e9dd;
+  --hover-color: #decec8;
+  --border-color: white;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.5s ease;
+}
+
+/* Toggle for Dark Mode */
+.dark-mode {
+  background-color: #ffffff;
+  color: #222831;
+}
+
+.container {
+  padding: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Navigation Icons */
+.home, .glass-container {
+  position: fixed;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.home {
+  left: 20px;
+}
+
+.home i, .glass-container i {
+  font-size: 30px;
+  color: var(--text-color);
+  transition: transform 0.3s ease;
+}
+
+.glass-container {
+  right: 20px;
+}
+
+a:hover i {
+  transform: scale(0.85);
+  color: var(--accent-color);
+}
+
+/* Main Content Styling */
+.questions {
+  margin-top: 120px;
+  padding: 30px;
+  border: 2px solid var(--border-color);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(4px);
+  animation: fade-in 2s ease forwards;
+}
+
+.questions h2 {
+  margin-top: 40px;
+  font-size: 24px;
+  color: var(--text-color);
+}
+
+.questions p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Profile Photo */
+.photo {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo img {
+  width: 300px;
+  height: auto;
+  border-radius: 20px;
+  border: 2px solid var(--border-color);
+  mix-blend-mode: luminosity;
+  animation: fade-in 2s ease-in-out;
+}
+
+/* Download CV Button */
+.download-cv {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: var(--text-color);
+  border: 2px solid var(--text-color);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.download-cv:hover {
+  background: var(--text-color);
+  color: var(--bg-color);
+}
+
+/* Fade In Animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .questions {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .photo img {
+    width: 200px;
+  }
+
+  .glass-container, .home {
+    flex-direction: row;
+    gap: 10px;
+    top: auto;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .glass-container {
+    right: auto;
+  }
+}
+
+/* Dark mode full inversion */
+.dark-mode {
+  background-color: #f9f9f9;
+  color: #222831;
+}
+
+/* Invert general text, headings, and body */
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h5,
+.dark-mode p,
+.dark-mode ol,
+.dark-mode .questions,
+.dark-mode .container {
+  color: #222831 !important;
+  border-color: #222831 !important;
+}
+
+/* Invert anchors */
+.dark-mode a,
+.dark-mode a:link,
+.dark-mode a:visited {
+  color: #222831 !important;
+}
+
+.dark-mode a:hover {
+  color: #444;
+}
+
+/* Invert font awesome icons and devicons */
+.dark-mode .fa,
+.dark-mode i,
+.dark-mode .glass-container i,
+.dark-mode .home i {
+  color: #222831 !important;
+}
+
+/* Invert image colors */
+.dark-mode .photo img {
+  filter: invert(1) contrast(1.1);
+  mix-blend-mode: normal;
+}
+
+/* Optional: adjust fade-in overlays for light mode */
+.dark-mode #fade-in,
+.dark-mode #fade-in-delay {
+  color: #222831 !important;
+}
+
+/* Optional: invert bold tag styling */
+.dark-mode bold {
+  color: #222831 !important;
+  text-decoration: underline;
+}
+/* Dark mode background */
+body.dark-mode {
+  background-color: #f4f4f4;
+  color: #111;
+}
+
+/* Invert text and icons */
+.dark-mode h1,
+.dark-mode h3,
+.dark-mode a,
+.dark-mode i {
+  color: #111 !important;
+}
+
+/* Optional: invert icon colors using filters */
+.invert-icon {
+  filter: invert(1);
+}
+
+/* Dark mode toggle button */
+#darkModeBtn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  background: #444;
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+#darkModeBtn:hover {
+  background: #666;
+}
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #222831;
+  color: white;
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #f4f4f4;
+  color: #111;
+}
+.dark-mode i,
+.dark-mode h1,
+.dark-mode h3 {
+  color: #111 !important;
+}
+.invert-icon {
+  filter: invert(1);
+}
+
+/* Dark Mode Button */
+#darkModeBtn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px 15px;
+  background: #444;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background 0.3s;
+}
+#darkModeBtn:hover {
+  background: #666;
+}
+
+/* Icon Menu */
+/* Icon Menu */
+.glass-container {
+  position: fixed;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 999;
+  width: max-content; /* Add this line to fix the click issue */
+}
+.glass-container a i {
+  font-size: 30px;
+  color: white;
+  transition: transform 0.3s;
+}
+.glass-container a:hover i {
+  transform: scale(1.1);
+}
+
+/* Main Content */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  padding: 20px;
+}
+h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+h3 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* Carousel */
+.carousel-container {
+  margin-top: 40px;
+}
+#language-icon {
+  font-size: 100px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 36px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  .glass-container {
+    flex-direction: row;
+    top: auto;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 20px;
+}
+
+.project-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: left;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.project-card h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.project-card a {
+  color: #00bcd4;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: color 0.3s;
+}
+
+.project-card a:hover {
+  color: #ff4081;
+}
+
+.project-card a i {
+  margin-right: 8px;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  background-color: #333;
+  color: white;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaa;
+}
+
+.contact-form button {
+  padding: 12px;
+  font-size: 16px;
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #0097a7;
+}
+
+.contact-socials {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.contact-socials a {
+  margin: 0 10px;
+  font-size: 30px;
+  color: white;
+  transition: transform 0.3s;
+}
+
+.contact-socials a:hover {
+  transform: scale(1.2);
+  color: #00bcd4;
+}
+
+/* Initial hidden state */
+body {
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+}
+
+/* Fade-in effect after DOM is ready */
+body.fade-in {
+  opacity: 1;
+}
+
+/* Optional fade-out */
+.fade-out {
+  opacity: 0;
+}
+

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harvey Humphrey | About Me</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/089a83799e.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+</head>
+<button onclick="toggleDarkMode()" style="
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  background: #444;
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+">
+  Dark/Light Mode
+</button>
+
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+  }
+</script>
+<script>
+  // Fade-in when the page loads
+  window.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("fade-in");
+  });
+
+  // Fade-out on link click
+  document.querySelectorAll("a").forEach(link => {
+    const target = link.getAttribute("target");
+    if (target !== "_blank" && link.href && !link.href.includes("#")) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.body.classList.remove("fade-in");
+        document.body.classList.add("fade-out");
+
+        setTimeout(() => {
+          window.location.href = this.href;
+        }, 500); // Adjust timing to match CSS transition
+      });
+    }
+  });
+</script>
+<script>
+  // Fade-in when the page loads
+  window.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("fade-in");
+  });
+
+  // Fade-out on link click
+  document.querySelectorAll("a").forEach(link => {
+    const target = link.getAttribute("target");
+    if (target !== "_blank" && link.href && !link.href.includes("#")) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.body.classList.remove("fade-in");
+        document.body.classList.add("fade-out");
+
+        setTimeout(() => {
+          window.location.href = this.href;
+        }, 500); // Adjust timing to match CSS transition
+      });
+    }
+  });
+</script>
+
+
+
+<body>
+  <div class="container" id="fade-in">
+
+    <!-- Home Button -->
+    <div class="home">
+      <a href="index.html" aria-label="Go to Home Page">
+        <i class="fa-solid fa-house" id="homepagelogo"></i>
+      </a>
+    </div>
+
+    <!-- Navigation Panel -->
+    <div class="panels">
+      <nav class="glass-container" aria-label="Main Navigation">
+        <a href="about.html" title="About Me"><i class="fa-solid fa-circle-user"></i></a>
+        <a href="projects.html" title="Projects"><i class="fa-solid fa-diagram-project"></i></a>
+        <a href="contact.html" title="Contact"><i class="fa-solid fa-comments"></i></a>
+      </nav>
+    </div>
+
+    <!-- About Me Section -->
+    <section class="questions" id="fade-in-delay">
+      <h2>Who are you?</h2>
+      <p>
+        I'm Harvey, a student studying Computer Science with Artificial Intelligence at Oxford Brookes University. I'm currently in my second year and studying modules such as software development and advanced AI.
+      </p>
+      <p>
+        <strong>Known Programming Languages:</strong> Python (Proficient), Java (Intermediate), C (Learning), C++ (Learning), C# (Intermediate)
+      </p>
+
+      <h2>What are your academic qualifications?</h2>
+      <p>
+        I achieved B's in all core subjects including <strong>Maths</strong> and <strong>Computer Science</strong>. I earned a <strong>Merit</strong> in my college project using <strong>Microsoft SQL Server and C#</strong>. I'm currently maintaining a grade average of over 70% at university.
+      </p>
+
+      <h2>What are your hobbies?</h2>
+      <p>
+        My main hobby is going to the gym, which I've done since I was 16 — it helps me relax and reset. I’ve recently started learning the guitar, which I’m really enjoying. I also love coding in my spare time, whether that’s updating my portfolio, building new GitHub projects, or learning new languages.
+      </p>
+
+      <h2>What do you like about the digital world?</h2>
+      <p>
+        I'm fascinated by how computing has made the impossible possible — especially the rapid development of AI. It’s become part of everyday life, and I’m particularly passionate about building my own AI solutions from scratch, rather than relying on GPT wrappers.
+      </p>
+
+      <h2>What are your aspirations?</h2>
+      <p>
+        My goal is to move abroad and focus on developing applications and AI that improve people’s lives in meaningful ways.
+        <a href="YourCV.pdf" class="download-cv" download>Download My CV</a>
+
+      </p>
+    </section>
+
+
+  </div>
+</body>
+</html>

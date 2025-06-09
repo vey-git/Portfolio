@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harvey Humphrey Portfolio</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/089a83799e.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+</head>
+
+<body>
+  <!-- Dark Mode Button -->
+  <button id="darkModeBtn" onclick="toggleDarkMode()">Toggle Dark/Light</button>
+
+  <!-- Navigation Icons -->
+  <div class="glass-container">
+    <a href="index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+    <a href="about.html" title="About"><i class="fa-solid fa-circle-user"></i></a>
+    <a href="projects.html" title="Projects"><i class="fa-solid fa-diagram-project"></i></a>
+    <a href="contact.html" title="Contact"><i class="fa-solid fa-comments"></i></a>
+  </div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <h1>Harvey Humphrey</h1>
+    <h3>Computer Science & AI Student @ Oxford Brookes University</h3>
+
+    <!-- Logo Carousel -->
+    <div class="carousel-container">
+      <i id="language-icon" class="devicon-python-plain"></i>
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script>
+    const iconClasses = [
+      "devicon-python-plain",
+      "devicon-mysql-plain",
+      "devicon-java-plain",
+      "devicon-c-plain",
+      "devicon-cplusplus-plain"
+    ];
+    let iconIndex = 0;
+    const iconEl = document.getElementById("language-icon");
+
+    setInterval(() => {
+      iconEl.style.opacity = 0;
+      setTimeout(() => {
+        iconIndex = (iconIndex + 1) % iconClasses.length;
+        iconEl.className = iconClasses[iconIndex];
+        iconEl.style.opacity = 1;
+      }, 300);
+    }, 2500);
+
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+      document.querySelectorAll('i').forEach(icon => {
+        icon.classList.toggle('invert-icon');
+      });
+    }
+  </script>
+  <script>
+  // Fade-in when the page loads
+  window.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("fade-in");
+  });
+
+  // Fade-out on link click
+  document.querySelectorAll("a").forEach(link => {
+    const target = link.getAttribute("target");
+    if (target !== "_blank" && link.href && !link.href.includes("#")) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.body.classList.remove("fade-in");
+        document.body.classList.add("fade-out");
+
+        setTimeout(() => {
+          window.location.href = this.href;
+        }, 500); // Adjust timing to match CSS transition
+      });
+    }
+  });
+</script>
+</body>
+</html>

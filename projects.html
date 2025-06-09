@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Harvey Humphrey Portfolio</title>
+
+  <!-- Styles & Fonts -->
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/089a83799e.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+</head>
+
+<body>
+  <!-- Dark Mode Button -->
+  <button id="darkModeBtn" onclick="toggleDarkMode()">Toggle Dark/Light</button>
+
+  <!-- Navigation -->
+  <div class="glass-container" id="fade-in">
+    <a href="index.html"><i class="fa-solid fa-house"></i></a>
+    <a href="about.html"><i class="fa-solid fa-circle-user"></i></a>
+    <a href="projects.html"><i class="fa-solid fa-diagram-project"></i></a>
+    <a href="contact.html"><i class="fa-solid fa-comments"></i></a>
+  </div>
+
+  <!-- Main Content -->
+  <main class="main-content" id="fade-in-delay">
+    <h1>Projects</h1>
+    <h3>A few of the things I've built</h3>
+
+    <!-- Projects Grid -->
+    <section class="projects-grid">
+      <!-- Project 1 -->
+      <div class="project-card">
+        <h4>Text Adventure Game</h4>
+        <p>A simple text adventure game created in Python used as my first project using GitHub repositories.</p>
+        <a href="https://github.com/vey-git/-PROJECT-Text-Adventure-Game" target="_blank">
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <h4>Student Record Panel</h4>
+        <p>A project that introduced structures and object oriented programming into my repositories, i also have a similar one created with C</p>
+        <a href="https://github.com/vey-git/-PROJECT-Student-Information-Panel" target="_blank">
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- JS -->
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+      document.querySelectorAll('i').forEach(icon => {
+        icon.classList.toggle('invert-icon');
+      });
+    }
+  </script>
+  <script>
+  // Fade-in when the page loads
+  window.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("fade-in");
+  });
+
+  // Fade-out on link click
+  document.querySelectorAll("a").forEach(link => {
+    const target = link.getAttribute("target");
+    if (target !== "_blank" && link.href && !link.href.includes("#")) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.body.classList.remove("fade-in");
+        document.body.classList.add("fade-out");
+
+        setTimeout(() => {
+          window.location.href = this.href;
+        }, 500); // Adjust timing to match CSS transition
+      });
+    }
+  });
+</script>
+</body>
+</html>
