@@ -1,117 +1,143 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Harvey Humphrey | Research Portfolio</title>
-<link rel="stylesheet" href="styles.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-
 <body>
 
-<nav>
-<div class="container nav-container">
-<div class="logo">Harvey Humphrey</div>
+<header class="hero">
 
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#research">Research</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#academic">Academic</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</div>
-</nav>
+    <div class="container">
 
-<header>
+        <img src="assets/headshot.jpg"
+             alt="Harvey Humphrey"
+             class="headshot">
 
-<div class="hero-content">
+        <h1>Harvey Humphrey</h1>
 
-<h1>
-Congestion-Aware Adaptive Traffic Routing Using Machine Learning and Graph Optimisation
-</h1>
+        <p class="degree">
+            BSc Computer Science with Artificial Intelligence
+        </p>
 
-<p>
-BSc Computer Science with Artificial Intelligence
-<br>
-Oxford Brookes University
-</p>
+        <p class="tagline">
+            Machine Learning • Graph Optimisation • Artificial Intelligence • Intelligent Systems
+        </p>
 
-<div class="hero-buttons">
+        <div class="hero-buttons">
 
-<a href="https://github.com/vey-git/Neural-Traffic-Routing-and-Congestion-Optimisation-System" target="_blank">
-View Research Project
-</a>
+            <a href="assets/Harvey_Humphrey_CV.pdf"
+               class="btn">
+               Download CV
+            </a>
 
-<a href="https://github.com/vey-git" target="_blank">
-GitHub Profile
-</a>
+            <a href="assets/Traffic_Routing_Dissertation.pdf"
+               class="btn btn-primary">
+               Read Dissertation
+            </a>
 
-</div>
+            <a href="https://github.com/vey-git"
+               class="btn">
+               GitHub
+            </a>
 
-</div>
+            <a href="https://www.linkedin.com/in/harveyhumphrey/"
+               class="btn">
+               LinkedIn
+            </a>
+
+        </div>
+
+    </div>
 
 </header>
+  <section class="about">
 
-<section id="about">
+    <div class="container">
+
+        <h2>About Me</h2>
+
+        <p>
+            I am a Computer Science with Artificial Intelligence student at
+            Oxford Brookes University with interests in machine learning,
+            graph optimisation, intelligent systems and transportation
+            modelling.
+
+            My current research focuses on adaptive traffic routing using
+            graph theory and neural-network-based congestion prediction.
+
+            I am preparing applications for postgraduate study in Advanced
+            Computer Science and related research programmes.
+        </p>
+
+    </div>
+
+</section>
+<section class="featured-project">
 
 <div class="container">
 
-<h2>About</h2>
+<h2>Featured Dissertation Project</h2>
 
-<p>
-I am a Computer Science with Artificial Intelligence student at Oxford Brookes University with interests in machine learning, graph optimisation, intelligent systems, network science and algorithm design.
-</p>
+<div class="project-layout">
 
-<p>
-My work focuses on combining theoretical computer science with practical software engineering to investigate real-world optimisation problems.
-</p>
+<div class="project-image">
+
+<img src="assets/heatmap.png"
+     alt="Traffic Routing">
 
 </div>
 
-</section>
+<div class="project-content">
 
-<section id="research">
-
-<div class="container">
-
-<h2>Featured Research Project</h2>
-
-<div class="research-card">
+<span class="badge">
+Independent Research Dissertation
+</span>
 
 <h3>
 Neural Traffic Routing and Congestion Optimisation System
 </h3>
 
 <p>
-This research investigates whether adaptive congestion-aware routing can improve urban traffic efficiency compared to traditional shortest-path algorithms.
+
+A large-scale research project investigating
+adaptive traffic routing using graph theory,
+shortest-path optimisation, congestion modelling
+and neural-network prediction.
+
 </p>
 
-<h4>Methods</h4>
-
 <ul>
-<li>OpenStreetMap Road Networks</li>
-<li>OSMnx</li>
-<li>NetworkX</li>
-<li>Dijkstra Search</li>
-<li>A* Search</li>
-<li>Adaptive Congestion Weighting</li>
-<li>Custom Neural Network Built from Scratch</li>
-<li>Large-Scale Traffic Simulation</li>
+
+<li>Independent research dissertation (~75 pages)</li>
+
+<li>Graph optimisation and intelligent transportation systems</li>
+
+<li>Custom neural network built from first principles</li>
+
+<li>Real-world Oxford road network analysis</li>
+
+<li>Real-world OpenStreetMap road networks</li>
+
+<li>Dijkstra vs A* comparative evaluation</li>
+
+<li>Custom neural network implemented from scratch</li>
+
+<li>Adaptive congestion-aware routing</li>
+
+<li>Traffic simulation up to 1000 vehicles</li>
+
 </ul>
 
-<h4>Technical Contributions</h4>
+<div class="project-buttons">
 
-<ul>
-<li>Custom feed-forward neural network implementation using NumPy</li>
-<li>Dynamic congestion modelling</li>
-<li>Adaptive edge-weight updates</li>
-<li>Vehicle rerouting simulation</li>
-<li>Performance evaluation framework</li>
-<li>Comparative algorithm analysis</li>
-</ul>
+<a href="assets/Traffic_Routing_Dissertation.pdf"
+class="btn btn-primary">
+Read Report
+</a>
+
+<a href="https://github.com/vey-git/Neural-Traffic-Routing-and-Congestion-Optimisation-System"
+class="btn">
+Source Code
+</a>
+
+</div>
+
+</div>
 
 </div>
 
@@ -119,48 +145,36 @@ This research investigates whether adaptive congestion-aware routing can improve
 
 </section>
 
-<section id="projects">
+  <section>
 
 <div class="container">
 
-<h2>Projects</h2>
+<h2>Research Interests</h2>
 
-<div class="project-grid">
+<div class="interests-grid">
 
-<div class="project-card">
-<h3>Neural Traffic Routing</h3>
-<p>Machine learning driven traffic optimisation and congestion prediction.</p>
-<a href="https://github.com/vey-git/Neural-Traffic-Routing-and-Congestion-Optimisation-System">View Project</a>
+<div class="interest-card">
+Machine Learning
 </div>
 
-<div class="project-card">
-<h3>Bayesian ICU Prediction</h3>
-<p>Probabilistic inference model for COVID-19 ICU admission prediction.</p>
-<a href="https://github.com/vey-git/bayesian-inference-covid-icu">View Project</a>
+<div class="interest-card">
+Graph Algorithms
 </div>
 
-<div class="project-card">
-<h3>Depression Prediction</h3>
-<p>Machine learning classification and feature engineering.</p>
-<a href="https://github.com/vey-git/kaggle-depression-survey-prediction">View Project</a>
+<div class="interest-card">
+Network Science
 </div>
 
-<div class="project-card">
-<h3>AI Pathfinding</h3>
-<p>Graph search algorithms and route optimisation.</p>
-<a href="https://github.com/vey-git/AI-Pathfinding-Route-Optimisation">View Project</a>
+<div class="interest-card">
+Artificial Intelligence
 </div>
 
-<div class="project-card">
-<h3>Eye to Morse Code</h3>
-<p>Computer vision assisted communication system.</p>
-<a href="https://github.com/vey-git/eye_to_morse_code">View Project</a>
+<div class="interest-card">
+Optimisation
 </div>
 
-<div class="project-card">
-<h3>Face Detection</h3>
-<p>OpenCV based face detection and image processing.</p>
-<a href="https://github.com/vey-git/face-detection-using-openCV">View Project</a>
+<div class="interest-card">
+Probabilistic Modelling
 </div>
 
 </div>
@@ -168,8 +182,105 @@ This research investigates whether adaptive congestion-aware routing can improve
 </div>
 
 </section>
+<section>
 
-<section id="academic">
+<div class="container">
+
+<h2>Selected Projects</h2>
+
+<div class="projects-grid">
+
+<div class="project-card">
+
+<h3>
+Traffic Routing & Congestion Optimisation
+</h3>
+
+<p>
+Adaptive routing system using graph optimisation,
+OSMnx, NetworkX and neural networks.
+</p>
+
+<a href="https://github.com/vey-git/Neural-Traffic-Routing-and-Congestion-Optimisation-System">
+View Project
+</a>
+
+</div>
+
+<div class="project-card">
+
+<h3>
+Bayesian ICU Prediction
+</h3>
+
+<p>
+Probabilistic modelling of ICU admission risk
+using Bayesian inference.
+</p>
+
+<a href="https://github.com/vey-git/bayesian-inference-covid-icu">
+View Project
+</a>
+
+</div>
+
+<div class="project-card">
+
+<h3>
+Depression Survey Prediction
+</h3>
+
+<p>
+Machine-learning classification and preprocessing
+pipeline using survey data.
+</p>
+
+<a href="https://github.com/vey-git/kaggle-depression-survey-prediction">
+View Project
+</a>
+
+</div>
+
+<div class="project-card">
+
+<h3>
+AI Route Optimisation
+</h3>
+
+<p>
+Pathfinding and route optimisation using
+search algorithms.
+</p>
+
+<a href="https://github.com/vey-git/AI-Pathfinding-Route-Optimisation">
+View Project
+</a>
+
+</div>
+
+<div class="project-card">
+
+<h3>
+Eye To Morse Code
+</h3>
+
+<p>
+Computer vision communication system
+using eye movement detection.
+</p>
+
+<a href="https://github.com/vey-git/eye_to_morse_code">
+View Project
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section>
 
 <div class="container">
 
@@ -177,30 +288,83 @@ This research investigates whether adaptive congestion-aware routing can improve
 
 <div class="grades">
 
-<div>Foundations of Computation — 86%</div>
-<div>Software Development with C/C++ — 75%</div>
-<div>Enterprise Engineering — 74.8%</div>
-<div>Foundations of Computer Systems — 74.3%</div>
-<div>Data Structures and Algorithms — 73%</div>
-<div>Problem Solving and Programming — 71.75%</div>
-
+<div>
+Foundations of Computation
+<span>86%</span>
 </div>
 
-<p class="gpa">
-Current GPA: 3.5
-</p>
+<div>
+Software Development with C/C++
+<span>75%</span>
+</div>
+
+<div>
+Enterprise Engineering
+<span>74.8%</span>
+</div>
+
+<div>
+Foundations of Computer Systems
+<span>74.3%</span>
+</div>
+
+<div>
+Data Structures & Algorithms
+<span>73%</span>
+</div>
+
+</div>
 
 </div>
 
 </section>
 
-<section id="contact">
+<section>
+
+<div class="container">
+
+<h2>Technical Portfolio</h2>
+
+<div class="stats-grid">
+
+<div class="stat-card">
+<h3>7+</h3>
+<p>Public Projects</p>
+</div>
+
+<div class="stat-card">
+<h3>Python</h3>
+<p>Primary Development Language</p>
+</div>
+
+<div class="stat-card">
+<h3>Machine Learning</h3>
+<p>Research & Implementation</p>
+</div>
+
+<div class="stat-card">
+<h3>Graph Theory</h3>
+<p>Algorithmic Research</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+  
+<section class="contact">
 
 <div class="container">
 
 <h2>Contact</h2>
 
-<p>Email: harvey.humphrey@outlook.com</p>
+<p>
+Email:
+<a href="mailto:harvey.humphrey@outlook.com">
+harvey.humphrey@outlook.com
+</a>
+</p>
 
 <p>
 LinkedIn:
@@ -220,13 +384,4 @@ github.com/vey-git
 
 </section>
 
-<footer>
-
-<p>
-© 2026 Harvey Humphrey
-</p>
-
-</footer>
-
 </body>
-</html>
