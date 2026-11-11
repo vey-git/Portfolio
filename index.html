@@ -1,398 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en-GB">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harvey Humphrey</title>
-
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harvey Humphrey</title>
+<meta name="description" content="Harvey Humphrey, final-year Computer Science with Artificial Intelligence student at Oxford Brookes University. Research and projects in machine learning, graph algorithms and probabilistic modelling.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Harvey Humphrey">
+<meta property="og:description" content="Research and projects in machine learning, graph algorithms and probabilistic modelling.">
+<meta property="og:url" content="https://vey-git.github.io/Portfolio/">
+<meta property="og:image" content="https://vey-git.github.io/Portfolio/assets/social-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="assets/fonts/source-serif-4-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header class="hero">
-
-    <div class="container">
-
-        <img src="Harvey_Headshot_2026_1.1.1.jpg"
-             alt="Harvey Humphrey"
-             class="headshot">
-
-        <h1>Harvey Humphrey</h1>
-
-        <p class="degree">
-            BSc Computer Science with Artificial Intelligence
-        </p>
-
-        <p class="tagline">
-            Machine Learning • Graph Optimisation • Artificial Intelligence • Intelligent Systems
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="Harvey_Humphrey_Academic_CV.pdf"
-               class="btn">
-               Download CV
-            </a>
-
-            <a href="Neural_Traffic_Routing_and_Congestion_Optimisation_System_Report-10.pdf"
-               class="btn btn-primary">
-               Read Research Report
-            </a>
-
-            <a href="https://github.com/vey-git"
-               class="btn">
-               GitHub
-            </a>
-
-            <a href="https://www.linkedin.com/in/harveyhumphrey/"
-               class="btn">
-               LinkedIn
-            </a>
-
-        </div>
-
-    </div>
-
+<header class="masthead">
+  <div class="intro">
+    <h1>Harvey Humphrey</h1>
+    <p class="role">BSc Computer Science with Artificial Intelligence, Oxford Brookes University</p>
+    <p>I am a final-year undergraduate working mainly on machine learning, graph algorithms and probabilistic modelling. I am applying for postgraduate study in advanced computer science.</p>
+    <ul class="links">
+      <li><a href="Harvey_Humphrey_Academic_CV.pdf">CV (PDF)</a></li>
+      <li><a href="https://github.com/vey-git">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/harveyhumphrey/">LinkedIn</a></li>
+      <li><a href="mailto:harvey.humphrey@outlook.com">Email</a></li>
+    </ul>
+  </div>
+  <img class="portrait" src="assets/headshot.jpg" width="180" height="180" alt="Harvey Humphrey">
 </header>
-  <section class="about">
 
-    <div class="container">
+<main>
 
-        <h2>About Me</h2>
+<section id="research" class="block">
+  <h2>Research</h2>
+  <div class="content">
 
-        <p>
-            I am a Computer Science with Artificial Intelligence student at
-            Oxford Brookes University with interests in machine learning,
-            graph optimisation, intelligent systems and transportation
-            modelling.
+    <article class="entry">
+      <h3>Uncertainty-aware object detection under environmental distribution shifts</h3>
+      <p class="venue">Final-year dissertation, 2026&ndash;27 (in progress)</p>
+      <p>A YOLO detector fine-tuned to find guns and knives, used to test how reliably its uncertainty estimates reflect its real accuracy as lighting, blur, noise, occlusion and data source change. A live webcam demo shows the uncertainty of each detection as it updates.</p>
+      <p class="refs"><a href="https://github.com/vey-git/-Uncertainty-Aware-Object-Detection-Under-Environmental-Distribution-Shifts">Code</a></p>
+    </article>
 
-            My current research focuses on adaptive traffic routing using
-            graph theory and neural-network-based congestion prediction.
+    <article class="entry paper">
+      <div class="paper-text">
+        <h3><a href="Neural_Traffic_Routing_and_Congestion_Optimisation_System_Report-10.pdf">Congestion-aware adaptive traffic routing using dynamic graph optimisation and neural network prediction</a></h3>
+        <p class="venue">Independent research report, revised November 2026</p>
+        <p>A simulation of congestion-aware routing on Oxford&rsquo;s road network, built with OSMnx and NetworkX. On random journeys across the city, the busiest single road segment carried 11&ndash;13% of all vehicles, and one round of re-routing moved bottlenecks rather than removing them. The report also explains why A* gave no speed-up over Dijkstra&rsquo;s algorithm, and why a neural network written from scratch in NumPy failed to train.</p>
+        <p class="refs"><a href="Neural_Traffic_Routing_and_Congestion_Optimisation_System_Report-10.pdf">Report (PDF, 41 pages)</a> <a href="https://github.com/vey-git/Neural-Traffic-Routing-and-Congestion-Optimisation-System">Code</a></p>
+      </div>
+      <figure>
+        <img src="assets/oxford-road-usage.png" width="530" height="616" alt="Map of Oxford's road network, with the most heavily used roads in red forming a few long corridors">
+        <figcaption><span class="fig-no">Figure 1.</span> Road usage across Oxford for 100 simulated vehicles. Red roads carry at least 1.5 times the average usage.</figcaption>
+      </figure>
+    </article>
 
-            I am preparing applications for postgraduate study in Advanced
-            Computer Science and related research programmes.
-        </p>
-
-    </div>
-
-</section>
-<section class="featured-project">
-
-<div class="container">
-
-<h2>Featured Research Project</h2>
-
-<div class="project-layout">
-
-<div class="project-image">
-
-<img src="trafficheatmap.png"
-     alt="Traffic Routing">
-
-</div>
-
-<div class="project-content">
-
-<span class="badge">
-Independent Research Project
-</span>
-
-<h3>
-Neural Traffic Routing and Congestion Optimisation System
-</h3>
-
-<p>
-
-A simulation of congestion-aware routing on Oxford's real
-road network, comparing Dijkstra's algorithm with A*,
-measuring where congestion builds up as traffic grows, and
-testing a neural network written from first principles
-to predict congestion.
-
-</p>
-
-<ul>
-
-<li>Independent research report (41 pages, revised November 2026)</li>
-
-<li>Oxford road network from OpenStreetMap, modelled with OSMnx and NetworkX</li>
-
-<li>Dijkstra vs A* comparison, with an analysis of why A* gave no speed-up</li>
-
-<li>Congestion-aware re-routing, simulated with up to 5,000 vehicles</li>
-
-<li>The busiest road segment carried 11&ndash;13% of all journeys</li>
-
-<li>Feed-forward neural network implemented from scratch in NumPy, with a diagnosis of why it failed to train</li>
-
-</ul>
-
-<div class="project-buttons">
-
-<a href="Neural_Traffic_Routing_and_Congestion_Optimisation_System_Report-10.pdf"
-class="btn btn-primary">
-Read Report
-</a>
-
-<a href="https://github.com/vey-git/Neural-Traffic-Routing-and-Congestion-Optimisation-System"
-class="btn">
-Source Code
-</a>
-
-</div>
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
-  <section>
+<section id="projects" class="block">
+  <h2>Projects</h2>
+  <div class="content">
 
-<div class="container">
+    <article class="entry with-media">
+      <div>
+        <h3>Eye-controlled Morse code typing</h3>
+        <p class="venue">Personal project, 2025&ndash;26</p>
+        <p>Hands-free typing by blinking in Morse code, in real time from a webcam. It uses MediaPipe facial landmarks, eye-aspect-ratio blink detection and an RBF-kernel support vector machine.</p>
+        <p class="refs"><a href="https://github.com/vey-git/eye_to_morse_code">Code</a></p>
+      </div>
+      <video class="demo" src="assets/eye-to-morse.mp4" poster="assets/eye-to-morse.jpg" width="480" height="376" autoplay muted loop playsinline aria-label="Demonstration: blinking types letters on screen"></video>
+    </article>
 
-<h2>Research Interests</h2>
+    <article class="entry">
+      <h3>Bayesian network for COVID-19 ICU admission</h3>
+      <p class="venue">Module coursework, Advanced Artificial Intelligence, 2026</p>
+      <p>A Bayesian network for predicting ICU admission, built from the records of 5,644 patients. It compares exact inference by variable elimination with three sampling methods: rejection sampling, likelihood weighting and Gibbs sampling.</p>
+      <p class="refs"><a href="https://github.com/vey-git/bayesian-inference-covid-icu">Code</a></p>
+    </article>
 
-<div class="interests-grid">
+    <article class="entry">
+      <h3>Search algorithms on a real road network</h3>
+      <p class="venue">Module coursework, Introduction to Artificial Intelligence, 2025</p>
+      <p>Five search algorithms benchmarked on a 3,393-node road network of Oxfordshire: A*, bidirectional MM, breadth-first search, depth-first search and a logic-constrained A*.</p>
+      <p class="refs"><a href="https://github.com/vey-git/AI-Pathfinding-Route-Optimisation">Code</a></p>
+    </article>
 
-<div class="interest-card">
-Machine Learning
-</div>
+    <article class="entry">
+      <h3>Depression risk classification from survey data</h3>
+      <p class="venue">Kaggle Playground Series, season 4 episode 11</p>
+      <p>Data cleaning, feature engineering and a comparison of logistic regression, random forest and XGBoost. Final leaderboard score: 0.93937.</p>
+      <p class="refs"><a href="https://github.com/vey-git/kaggle-depression-survey-prediction">Code</a></p>
+    </article>
 
-<div class="interest-card">
-Graph Algorithms
-</div>
-
-<div class="interest-card">
-Network Science
-</div>
-
-<div class="interest-card">
-Artificial Intelligence
-</div>
-
-<div class="interest-card">
-Optimisation
-</div>
-
-<div class="interest-card">
-Probabilistic Modelling
-</div>
-
-</div>
-
-</div>
-
-</section>
-<section>
-
-<div class="container">
-
-<h2>Selected Projects</h2>
-
-<div class="projects-grid">
-
-<div class="project-card">
-
-<h3>
-Traffic Routing & Congestion Optimisation
-</h3>
-
-<p>
-Adaptive routing system using graph optimisation,
-OSMnx, NetworkX and neural networks.
-</p>
-
-<a href="https://github.com/vey-git/Neural-Traffic-Routing-and-Congestion-Optimisation-System">
-View Project
-</a>
-
-</div>
-
-<div class="project-card">
-
-<h3>
-Bayesian ICU Prediction
-</h3>
-
-<p>
-Probabilistic modelling of ICU admission risk
-using Bayesian inference.
-</p>
-
-<a href="https://github.com/vey-git/bayesian-inference-covid-icu">
-View Project
-</a>
-
-</div>
-
-<div class="project-card">
-
-<h3>
-Depression Survey Prediction
-</h3>
-
-<p>
-Machine-learning classification and preprocessing
-pipeline using survey data.
-</p>
-
-<a href="https://github.com/vey-git/kaggle-depression-survey-prediction">
-View Project
-</a>
-
-</div>
-
-<div class="project-card">
-
-<h3>
-AI Route Optimisation
-</h3>
-
-<p>
-Pathfinding and route optimisation using
-search algorithms.
-</p>
-
-<a href="https://github.com/vey-git/AI-Pathfinding-Route-Optimisation">
-View Project
-</a>
-
-</div>
-
-<div class="project-card featured-card">
-
-<img src="eye_to_morse.gif"
-     alt="Eye To Morse Code"
-     class="project-preview">
-
-<h3>
-Eye To Morse Code
-</h3>
-
-<p>
-Real-time computer vision communication system that converts
-eye-blink patterns into Morse code using OpenCV and machine
-learning techniques.
-</p>
-
-<a href="https://github.com/vey-git/eye_to_morse_code">
-View Project
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-<section>
-
-<div class="container">
-
-<h2>Academic Highlights</h2>
-
-<div class="grades">
-
-<div>
-Foundations of Computation
-<span>86%</span>
-</div>
-
-<div>
-Software Development with C/C++
-<span>75%</span>
-</div>
-
-<div>
-Enterprise Engineering
-<span>74.8%</span>
-</div>
-
-<div>
-Foundations of Computer Systems
-<span>74.3%</span>
-</div>
-
-<div>
-Data Structures & Algorithms
-<span>73%</span>
-</div>
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
-<section>
-
-<div class="container">
-
-<h2>Technical Portfolio</h2>
-
-<div class="stats-grid">
-
-<div class="stat-card">
-<h3>7+</h3>
-<p>Public Projects</p>
-</div>
-
-<div class="stat-card">
-<h3>Python</h3>
-<p>Primary Development Language</p>
-</div>
-
-<div class="stat-card">
-<h3>Machine Learning</h3>
-<p>Research & Implementation</p>
-</div>
-
-<div class="stat-card">
-<h3>Graph Theory</h3>
-<p>Algorithmic Research</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-  
-<section class="contact">
-
-<div class="container">
-
-<h2>Contact</h2>
-
-<p>
-Email:
-<a href="mailto:harvey.humphrey@outlook.com">
-harvey.humphrey@outlook.com
-</a>
-</p>
-
-<p>
-LinkedIn:
-<a href="https://www.linkedin.com/in/harveyhumphrey/">
-linkedin.com/in/harveyhumphrey
-</a>
-</p>
-
-<p>
-GitHub:
-<a href="https://github.com/vey-git">
-github.com/vey-git
-</a>
-</p>
-
-</div>
-
+<section id="education" class="block">
+  <h2>Education</h2>
+  <div class="content">
+    <article class="entry">
+      <h3>Oxford Brookes University</h3>
+      <p class="venue">BSc Computer Science with Artificial Intelligence, 2024&ndash;present</p>
+      <p>Year 2 average: 70.3%. Final-year modules include Machine Learning, Applications and Ethics of AI, and Advanced Interfaces.</p>
+      <table class="marks">
+        <caption>Selected module results</caption>
+        <tbody>
+          <tr><th scope="row">Foundations of Computation</th><td>86%</td></tr>
+          <tr><th scope="row">Software Development with C/C++</th><td>75%</td></tr>
+          <tr><th scope="row">Enterprise Engineering</th><td>74.8%</td></tr>
+          <tr><th scope="row">Foundations of Computer Systems</th><td>74.3%</td></tr>
+          <tr><th scope="row">Data Structures and Algorithms</th><td>73%</td></tr>
+          <tr><th scope="row">Problem Solving and Programming</th><td>71.75%</td></tr>
+        </tbody>
+      </table>
+    </article>
+  </div>
 </section>
 
+<section id="experience" class="block">
+  <h2>Experience</h2>
+  <div class="content">
+    <article class="entry">
+      <h3>Evolution Capital</h3>
+      <p class="venue">IT and data analyst (work placement), January&ndash;June 2023</p>
+      <p>Company research and financial data analysis for corporate finance work, presented in Microsoft Power BI. I also maintained and updated the firm&rsquo;s website.</p>
+    </article>
+  </div>
+</section>
+
+<section id="contact" class="block">
+  <h2>Contact</h2>
+  <div class="content">
+    <dl class="contact">
+      <dt>Email</dt><dd><a href="mailto:harvey.humphrey@outlook.com">harvey.humphrey@outlook.com</a></dd>
+      <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/harveyhumphrey/">linkedin.com/in/harveyhumphrey</a></dd>
+      <dt>GitHub</dt><dd><a href="https://github.com/vey-git">github.com/vey-git</a></dd>
+    </dl>
+  </div>
+</section>
+
+</main>
+
+<footer class="colophon">
+  <p>Last updated November 2026.</p>
+</footer>
+
+<script>
+  // Respect reduced-motion settings: show the still frame instead of the looping demo.
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('video.demo').forEach(function (v) {
+      v.removeAttribute('autoplay');
+      v.pause();
+      v.setAttribute('controls', '');
+    });
+  }
+</script>
 </body>
+</html>
