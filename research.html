@@ -11,16 +11,17 @@
 <h1>Research</h1>
 <div class="card">
 <h2>Traffic Routing and Congestion Optimisation</h2>
-<p>This project investigates whether adaptive congestion-aware routing can improve traffic distribution across urban transportation networks.</p>
-<p>Methods included graph optimisation, shortest-path routing, dynamic edge weighting and supervised machine learning.</p>
+<p>This project simulates congestion-aware routing on Oxford's real road network to investigate how traffic concentrates and whether re-routing and learned congestion prediction can spread it out.</p>
+<p>Methods included graph modelling with OSMnx and NetworkX, Dijkstra's algorithm and A*, dynamic edge weighting, and a feed-forward neural network implemented from scratch in NumPy.</p>
+<p><a href="Neural_Traffic_Routing_and_Congestion_Optimisation_System_Report-10.pdf">Read the report (PDF)</a> &middot; <a href="https://github.com/vey-git/Neural-Traffic-Routing-and-Congestion-Optimisation-System">Source code</a></p>
 </div>
 <div class="card">
 <h2>Key Findings</h2>
 <ul>
-<li>A* achieved modest efficiency improvements over Dijkstra.</li>
-<li>Road topology was the dominant factor influencing congestion.</li>
-<li>Adaptive rerouting improved traffic distribution.</li>
-<li>Neural networks learned congestion patterns under moderate traffic loads.</li>
+<li>A* gave no speed-up over Dijkstra: its straight-line heuristic was measured in degrees while road costs were in seconds, so it gave almost no guidance.</li>
+<li>Congestion concentrated on a few corridors: the busiest road segment carried 11&ndash;13% of all journeys.</li>
+<li>One round of re-routing changed most vehicles' routes and moved bottlenecks to other corridors rather than removing them.</li>
+<li>The neural network did not train (test R&sup2; = &minus;0.09); the report traces this to its learning rate and weight initialisation and sets out the fix.</li>
 </ul>
 </div>
 </body></html>
