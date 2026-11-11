@@ -13,6 +13,10 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/source-serif-4-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -50,7 +54,7 @@
     <img class="portrait" src="assets/portrait.jpg" width="640" height="800" alt="Harvey Humphrey">
   </div>
 
-  <p class="map-credit">Behind: Oxford&rsquo;s drivable road network, with one shortest route in blue. Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>.</p>
+  <p class="map-credit">Background map: Oxford&rsquo;s drivable road network, with one shortest route in blue. Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>.</p>
 </header>
 
 <main>
@@ -93,7 +97,10 @@
         <p>Hands-free typing by blinking in Morse code, in real time from a webcam. It uses MediaPipe facial landmarks, eye-aspect-ratio blink detection and an RBF-kernel support vector machine.</p>
         <p class="refs"><a href="https://github.com/vey-git/eye_to_morse_code">Code</a></p>
       </div>
-      <video class="demo" src="assets/eye-to-morse.mp4" poster="assets/eye-to-morse.jpg" width="480" height="376" autoplay muted loop playsinline aria-label="Demonstration: blinking types letters on screen"></video>
+      <figure>
+        <video class="demo" src="assets/eye-to-morse.mp4" poster="assets/eye-to-morse.jpg" width="480" height="376" controls muted loop playsinline preload="metadata"></video>
+        <figcaption><span class="fig-no">Figure 2.</span> Demonstration of the typing interface.</figcaption>
+      </figure>
     </article>
 
     <article class="entry">
@@ -173,13 +180,6 @@
 <script>
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // Reduced motion: show the still frame instead of the looping demo.
-  if (reduce) {
-    document.querySelectorAll('video.demo').forEach(function (v) {
-      v.removeAttribute('autoplay'); v.pause(); v.setAttribute('controls', '');
-    });
-  }
 
   // Slim section bar: appears once the header has scrolled out of view.
   var hero = document.querySelector('.hero');

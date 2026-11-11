@@ -280,7 +280,6 @@ figcaption {
   display: block;
   width: 100%;
   height: auto;
-  margin-top: 0.3rem;
   border: 1px solid var(--rule);
   background: #f2f2f0;
 }
@@ -374,12 +373,20 @@ figcaption {
   .paper,
   .with-media { grid-template-columns: minmax(0, 1fr); }
   .paper figure { max-width: 20rem; margin-top: 1rem; }
-  .with-media .demo { max-width: 20rem; margin-top: 0.75rem; }
+  .with-media figure { max-width: 20rem; margin-top: 0.75rem; }
   .contact { grid-template-columns: minmax(0, 1fr); gap: 0; }
   .contact dd { margin-bottom: 0.6rem; }
 }
 
+@media (min-width: 1800px) {
+  html { font-size: 125%; }     /* 20px on large monitors */
+}
+
 @media print {
-  .demo { display: none; }
+  .runner,
+  .with-media figure { display: none; }
+  .with-media { grid-template-columns: minmax(0, 1fr); }
+  .hero-map { transform: none !important; }
+  figure, .entry h3 { break-inside: avoid; }
   a { color: inherit; text-decoration: none; }
 }
