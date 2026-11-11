@@ -16,21 +16,41 @@
 <link rel="preload" href="assets/fonts/source-serif-4-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="top">
 
-<header class="masthead">
-  <div class="intro">
-    <h1>Harvey Humphrey</h1>
-    <p class="role">BSc Computer Science with Artificial Intelligence, Oxford Brookes University</p>
-    <p>I am a final-year undergraduate working mainly on machine learning, graph algorithms and probabilistic modelling. I am applying for postgraduate study in advanced computer science.</p>
-    <ul class="links">
-      <li><a href="Harvey_Humphrey_Academic_CV.pdf">CV (PDF)</a></li>
-      <li><a href="https://github.com/vey-git">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/in/harveyhumphrey/">LinkedIn</a></li>
-      <li><a href="mailto:harvey.humphrey@outlook.com">Email</a></li>
+<nav class="runner" aria-label="Sections">
+  <div class="runner-inner">
+    <a class="runner-name" href="#top">Harvey Humphrey</a>
+    <ul>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
-  <img class="portrait" src="assets/headshot.jpg" width="180" height="180" alt="Harvey Humphrey">
+</nav>
+
+<header class="hero">
+  <div class="hero-map" aria-hidden="true">
+    <img src="assets/oxford-roads.svg" alt="" width="1000" height="1423">
+  </div>
+
+  <div class="hero-inner">
+    <div class="intro">
+      <h1>Harvey Humphrey</h1>
+      <p class="role">BSc Computer Science with Artificial Intelligence<br>Oxford Brookes University</p>
+      <p>I am a final-year undergraduate working mainly on machine learning, graph algorithms and probabilistic modelling. I am applying for postgraduate study in advanced computer science.</p>
+      <ul class="links">
+        <li><a href="Harvey_Humphrey_Academic_CV.pdf">CV (PDF)</a></li>
+        <li><a href="https://github.com/vey-git">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/harveyhumphrey/">LinkedIn</a></li>
+        <li><a href="mailto:harvey.humphrey@outlook.com">Email</a></li>
+      </ul>
+    </div>
+    <img class="portrait" src="assets/portrait.jpg" width="640" height="800" alt="Harvey Humphrey">
+  </div>
+
+  <p class="map-credit">Behind: Oxford&rsquo;s drivable road network, with one shortest route in blue. Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>.</p>
 </header>
 
 <main>
@@ -54,7 +74,7 @@
         <p class="refs"><a href="Neural_Traffic_Routing_and_Congestion_Optimisation_System_Report-10.pdf">Report (PDF, 41 pages)</a> <a href="https://github.com/vey-git/Neural-Traffic-Routing-and-Congestion-Optimisation-System">Code</a></p>
       </div>
       <figure>
-        <img src="assets/oxford-road-usage.png" width="530" height="616" alt="Map of Oxford's road network, with the most heavily used roads in red forming a few long corridors">
+        <img src="assets/oxford-road-usage.png" width="530" height="616" loading="lazy" alt="Map of Oxford's road network, with the most heavily used roads in red forming a few long corridors">
         <figcaption><span class="fig-no">Figure 1.</span> Road usage across Oxford for 100 simulated vehicles. Red roads carry at least 1.5 times the average usage.</figcaption>
       </figure>
     </article>
@@ -151,14 +171,40 @@
 </footer>
 
 <script>
-  // Respect reduced-motion settings: show the still frame instead of the looping demo.
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Reduced motion: show the still frame instead of the looping demo.
+  if (reduce) {
     document.querySelectorAll('video.demo').forEach(function (v) {
-      v.removeAttribute('autoplay');
-      v.pause();
-      v.setAttribute('controls', '');
+      v.removeAttribute('autoplay'); v.pause(); v.setAttribute('controls', '');
     });
   }
+
+  // Slim section bar: appears once the header has scrolled out of view.
+  var hero = document.querySelector('.hero');
+  var runner = document.querySelector('.runner');
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      runner.classList.toggle('is-visible', !entries[0].isIntersecting);
+    }, { rootMargin: '-80px 0px 0px 0px' }).observe(hero);
+  }
+
+  // Parallax: the map drifts more slowly than the page, so it reads as a layer behind it.
+  var map = document.querySelector('.hero-map');
+  if (reduce || !map) return;
+  var ticking = false;
+  function update() {
+    var y = window.scrollY;
+    if (y < hero.offsetHeight + 200) {
+      map.style.transform = 'translate3d(0,' + (y * 0.35).toFixed(1) + 'px,0)';
+    }
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+  }, { passive: true });
+})();
 </script>
 </body>
 </html>
